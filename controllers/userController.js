@@ -55,13 +55,13 @@ const loginUser = asyncHandler(async (req, res) => {
     const accessToken = jwt.sign(
       {
         user: {
-          username: user.username,
+          userName: user.userName,
           email: user.email,
           id: user.id,
         },
       },
       process.env.ACCESS_TOKEN_SECRET,
-      { expiresIn: "1m" }
+      { expiresIn: "3m" }
     );
     res.status(200).json({ accessToken });
   } else {
