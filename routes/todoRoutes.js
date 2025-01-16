@@ -10,8 +10,11 @@ const {
 } = require("../controllers/todoController");
 const validateToken = require("../middleware/validateTokenHandler");
 
-router.get;
-router.route("/").get(validateToken, getFullList).post(createTask);
+// router.get;
+router
+  .route("/")
+  .get(validateToken, getFullList)
+  .post(validateToken, createTask);
 
 router.route("/user").get(validateToken, getTaskByUserId);
 
